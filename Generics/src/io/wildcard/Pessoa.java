@@ -5,7 +5,7 @@ public class Pessoa extends Cidadao {
     private String nome;
     private int idade;
 
-    public Pessoa(String cpf, int idade) {
+    public Pessoa(String cpf, String nome, int idade) {
         super(cpf);
         this.nome = nome;
         this.idade = idade;

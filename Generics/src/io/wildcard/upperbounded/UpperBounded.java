@@ -1,5 +1,6 @@
 package io.wildcard.upperbounded;
 
+import io.wildcard.Aluno;
 import io.wildcard.Cidadao;
 import io.wildcard.Pessoa;
 

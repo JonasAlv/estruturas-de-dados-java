@@ -7,6 +7,7 @@
 **/.factorypath
 
 # IntelliJ
+.idea
 **/.idea/
 **/*.iml
 **/*.ipr

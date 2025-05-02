@@ -1,29 +1,59 @@
-### IntelliJ IDEA ###
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+# === IDE-Specific Files (All Major IDEs) ===
+# Eclipse
+**/.metadata/
+**/.settings/
+**/.project
+**/.classpath
+**/.factorypath
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+# IntelliJ
+**/.idea/
+**/*.iml
+**/*.ipr
+**/*.iws
+**/out/
+/out/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# VSCode
+**/.vscode/
+**/.factorypath
 
-### VS Code ###
-.vscode/
+# NetBeans
+**/nbproject/
+**/nb-configuration.xml
 
-### Mac OS ###
-.DS_Store
+# === Build & Dependency Files ===
+# Maven
+**/target/
+**/.mvn/
+**/mvnw
+**/mvnw.cmd
+**/pom.xml.versionsBackup
+
+# Gradle
+**/.gradle/
+**/gradle/
+**/gradlew
+**/gradlew.bat
+**/build/
+
+# Generic build/output
+**/bin/
+**/out/
+**/dist/
+**/*.jar
+**/*.war
+**/*.ear
+
+# === Compiled & Runtime Files ===
+**/*.class
+**/*.log
+**/logs/
+**/*.tmp
+**/*.bak
+**/*.swp
+
+# === OS & Tooling Temp Files ===
+**/.DS_Store (Mac)
+**/Thumbs.db (Windows)
+**/.~lock.* (LibreOffice/OpenOffice)

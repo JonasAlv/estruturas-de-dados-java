@@ -1,19 +1,20 @@
 package io.filas;
 
-public class Fila {
+public class Fila<T> {
 
-    private No entradaFila = null;
+    private No<T> entradaFila = null;
 
     public Fila() {
         this.entradaFila = null;
     }
 
-    public void enqueue(No novoNo){
+    public void enqueue(T o){
+        No novoNo = new No(o);
         novoNo.setRefNo(entradaFila);
         entradaFila = novoNo;
     }
 
-    public No dequeue(){
+    public T dequeue(){
         if(!isEmpty()){
             No primeiro = entradaFila;
             No auxiliar = entradaFila;
@@ -26,12 +27,12 @@ public class Fila {
                     break;
                 }
             }
-            return primeiro;
+            return (T) primeiro.getObject();
         }
         return null;
     }
 
-    public No first(){
+    public T first(){
         if(!isEmpty()){
             No primeiro = entradaFila;
             while(true){
@@ -41,7 +42,7 @@ public class Fila {
                     break;
                 }
             }
-            return primeiro;
+            return (T) primeiro.getObject();
         }
         return null;
     }
@@ -57,7 +58,7 @@ public class Fila {
 
         if(entradaFila != null){
             while(true){
-                stringRetorno += "[No{objeto="+ auxiliar.getObject() +"}]--->";
+                stringRetorno += "[" + auxiliar.getObject() + "]---> ";
                 if(auxiliar.getRefNo() != null){
                     auxiliar = auxiliar.getRefNo();
                 }else{

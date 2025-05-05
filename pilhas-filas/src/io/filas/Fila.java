@@ -2,60 +2,64 @@ package io.filas;
 
 public class Fila {
 
-    private No refNoEntradaFila = null;
+    private No entradaFila = null;
+
+    public Fila() {
+        this.entradaFila = null;
+    }
 
     public void enqueue(No novoNo){
-        novoNo.setRefNo(refNoEntradaFila);
-        refNoEntradaFila = novoNo;
+        novoNo.setRefNo(entradaFila);
+        entradaFila = novoNo;
     }
 
     public No dequeue(){
         if(!isEmpty()){
-            No primeiroNo = refNoEntradaFila;
-            No noAuxiliar = refNoEntradaFila;
+            No primeiro = entradaFila;
+            No auxiliar = entradaFila;
             while(true){
-                if(primeiroNo.getRefNo() != null) {
-                    noAuxiliar = primeiroNo;
-                    primeiroNo = primeiroNo.getRefNo();
+                if(primeiro.getRefNo() != null) {
+                    auxiliar = primeiro;
+                    primeiro = primeiro.getRefNo();
                 }else{
-                    noAuxiliar.setRefNo(null);
+                    auxiliar.setRefNo(null);
                     break;
                 }
             }
-            return primeiroNo;
+            return primeiro;
         }
         return null;
     }
 
     public No first(){
         if(!isEmpty()){
-            No primeiroNo = refNoEntradaFila;
+            No primeiro = entradaFila;
             while(true){
-                if(primeiroNo.getRefNo() != null) {
-                    primeiroNo = primeiroNo.getRefNo();
+                if(primeiro.getRefNo() != null) {
+                    primeiro = primeiro.getRefNo();
                 }else{
                     break;
                 }
             }
-            return primeiroNo;
+            return primeiro;
         }
         return null;
     }
 
     public boolean isEmpty(){
-        return refNoEntradaFila == null ? true : false;
+        return entradaFila == null ? true : false;
     }
 
     @Override
     public String toString() {
         String stringRetorno = "";
-        No noAuxiliar = refNoEntradaFila;
+        No auxiliar = entradaFila;
 
-        if(refNoEntradaFila != null){
+        if(entradaFila != null){
             while(true){
-                stringRetorno += "[No{objeto="+ noAuxiliar.getObject() +"}]--->";
-                if(noAuxiliar.getRefNo() != null){
-                    noAuxiliar = noAuxiliar.getRefNo();
+                stringRetorno += "[No{objeto="+ auxiliar.getObject() +"}]--->";
+                if(auxiliar.getRefNo() != null){
+                    auxiliar = auxiliar.getRefNo();
                 }else{
                     stringRetorno += "null";
                     break;

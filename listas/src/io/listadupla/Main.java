@@ -18,8 +18,8 @@ public class Main {
 
         System.out.println(lista);
 
-        lista.remove(3);
-        lista.add(3, "99");
+        lista.remove(6);
+        lista.add("99");
 
         System.out.println(lista);
     }
